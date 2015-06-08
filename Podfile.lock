@@ -1,0 +1,10 @@
+PODS:
+  - NorthLayout (0.1.0)
+
+DEPENDENCIES:
+  - NorthLayout
+
+SPEC CHECKSUMS:
+  NorthLayout: f1a1753ef83ff5cd363c9fa92d14e72c97a485c9
+
+COCOAPODS: 0.37.2

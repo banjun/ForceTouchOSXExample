@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9457F688894AB08824CD87C9 /* Pods_ForceTouchOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 209C20F0E6314E7AD9B6BEB6 /* Pods_ForceTouchOSX.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		EA33DC541B2551E50050772C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA33DC531B2551E50050772C /* AppDelegate.swift */; };
 		EA33DC561B2551E50050772C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA33DC551B2551E50050772C /* Images.xcassets */; };
 		EA33DC591B2551E50050772C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA33DC571B2551E50050772C /* MainMenu.xib */; };
@@ -24,6 +25,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		209C20F0E6314E7AD9B6BEB6 /* Pods_ForceTouchOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForceTouchOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44263A435FD8B15262BF267A /* Pods-ForceTouchOSX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForceTouchOSX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ForceTouchOSX/Pods-ForceTouchOSX.debug.xcconfig"; sourceTree = "<group>"; };
+		8B5B2807F4233965201FBAB8 /* Pods-ForceTouchOSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForceTouchOSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForceTouchOSX/Pods-ForceTouchOSX.release.xcconfig"; sourceTree = "<group>"; };
 		EA33DC4E1B2551E50050772C /* ForceTouchOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForceTouchOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA33DC521B2551E50050772C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA33DC531B2551E50050772C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9457F688894AB08824CD87C9 /* Pods_ForceTouchOSX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,12 +57,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F445B73820FAD198FB93C79 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				44263A435FD8B15262BF267A /* Pods-ForceTouchOSX.debug.xcconfig */,
+				8B5B2807F4233965201FBAB8 /* Pods-ForceTouchOSX.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		308B27D2E1BBB5DB15FD9E26 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				209C20F0E6314E7AD9B6BEB6 /* Pods_ForceTouchOSX.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EA33DC451B2551E40050772C = {
 			isa = PBXGroup;
 			children = (
 				EA33DC501B2551E50050772C /* ForceTouchOSX */,
 				EA33DC611B2551E50050772C /* ForceTouchOSXTests */,
 				EA33DC4F1B2551E50050772C /* Products */,
+				1F445B73820FAD198FB93C79 /* Pods */,
+				308B27D2E1BBB5DB15FD9E26 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,9 +137,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EA33DC681B2551E50050772C /* Build configuration list for PBXNativeTarget "ForceTouchOSX" */;
 			buildPhases = (
+				0B1E617DBB1F6A10D3FDEB56 /* Check Pods Manifest.lock */,
 				EA33DC4A1B2551E50050772C /* Sources */,
 				EA33DC4B1B2551E50050772C /* Frameworks */,
 				EA33DC4C1B2551E50050772C /* Resources */,
+				41640E20B109673C23D10F8B /* Embed Pods Frameworks */,
+				26734DD69CB6449E8B5D47D9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,6 +226,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B1E617DBB1F6A10D3FDEB56 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		26734DD69CB6449E8B5D47D9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ForceTouchOSX/Pods-ForceTouchOSX-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41640E20B109673C23D10F8B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ForceTouchOSX/Pods-ForceTouchOSX-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EA33DC4A1B2551E50050772C /* Sources */ = {
@@ -321,6 +396,7 @@
 		};
 		EA33DC691B2551E50050772C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44263A435FD8B15262BF267A /* Pods-ForceTouchOSX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -332,6 +408,7 @@
 		};
 		EA33DC6A1B2551E50050772C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B5B2807F4233965201FBAB8 /* Pods-ForceTouchOSX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -396,6 +473,7 @@
 				EA33DC6A1B2551E50050772C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA33DC6B1B2551E50050772C /* Build configuration list for PBXNativeTarget "ForceTouchOSXTests" */ = {
 			isa = XCConfigurationList;
@@ -404,6 +482,7 @@
 				EA33DC6D1B2551E50050772C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
