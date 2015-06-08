@@ -15,6 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
      
     let button = NSButton(frame: NSZeroRect)
     let label = NSTextField(frame: NSZeroRect)
+    let pressureView = PressureView()
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         let contentView = window.contentView as! NSView
@@ -34,10 +35,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         label.editable = false
         label.alignment = .CenterTextAlignment
         
-        let autolayout = contentView.northLayoutFormat([:], ["button": button, "label": label])
+        let autolayout = contentView.northLayoutFormat([:], [
+            "button": button,
+            "label": label,
+            "pressureView": pressureView,
+            ])
         autolayout("H:|-[button]-|")
-        autolayout("H:|-[label]-|")
-        autolayout("V:|-[button]-[label]")
+        autolayout("H:|-[label]-|")        
+        autolayout("H:|-[pressureView]-|")
+        autolayout("V:|-[button]-[label]-[pressureView]-|")
     }
     
     @objc private func clicked(sender: AnyObject?) {
